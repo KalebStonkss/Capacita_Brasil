@@ -1,0 +1,34 @@
+import Foundation
+
+print("Calculadora \n")
+print("Digite um número")
+guard let input = readLine(), let numum = Float(input) else{
+    print("Entrada inválida")
+    exit(1)
+}
+print("Digite outro número")
+guard let inputdois = readLine(), let numdois = Float(inputdois) else{
+    print("Entrada inválida")
+    exit(1)
+}
+print("Digite a operação desejada com símbolos (+,-,*,/)")
+guard let op = readLine() else{
+    print("Entrada inválida, use(+,-,* ou /)")
+    exit(1)
+}
+if op == "+"{
+    let soma = numum+numdois
+    print("soma: ",soma)
+}
+else if op == "-"{
+    let sub = numum-numdois
+    print("subtracao: ",sub)
+}
+else if op == "*"{
+    let mult = numum*numdois
+    print("mult: ",mult)
+}
+else if op == "/"{
+    let divisao = numum/numdois
+    print("divisao: ",divisao)
+}
