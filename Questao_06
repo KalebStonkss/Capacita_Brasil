@@ -1,0 +1,40 @@
+import SwiftUI
+
+@main // Entry point for the SwiftUI application
+struct Atividade_6App: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView() // Present the ContentView as the main user interface
+        }
+    }
+}
+
+// ContentView defines the UI of your app
+struct ContentView: View {
+    @State private var counter = 0
+    @State private var aux = 1
+    @State private var next = 0
+
+    var body: some View {
+        VStack(spacing: 15) {
+            Text("Contador Fibonacci: \(counter)")
+                .font(.largeTitle)
+
+            HStack(spacing: 15) { // Horizontal stack for the buttons
+                Button(action: {
+                    next = counter + aux
+                    counter = aux
+                    aux = next
+                }) {
+                    Text("Incrementar")
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+            }
+        }
+        .padding()
+        .navigationTitle("Bem-vindo ao contador teste") // Set the title of the navigation
+    }
+}
